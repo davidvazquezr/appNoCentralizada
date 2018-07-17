@@ -1,0 +1,55 @@
+<link href="css/despacho.css" rel="stylesheet">
+<ion-view title="Mis Despachos" hide-nav-bar="true" id="page1" ng-init="init()">
+  <ion-content padding="false" class="manual-ios-statusbar-padding">
+    <a class="item item-icon-left fondo" ui-sref="consultas">
+      <i class="icon ion-chevron-left pointer"></i>
+    <h2 class="text-center titulo"><strong>Mis Despachos</strong></h2>      
+    </a>
+    <div class="padding">
+      <div class="row">
+        <div class="col text-center" ng-click="enProceso()" id="pros" style="{{colorP}}" ng-show="verEnProceso">
+          En Proceso
+        </div>
+        <div class="col text-center" ng-click="verFinalizados()" id="fin" style="{{colorF}}">
+          Finalizados
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+      <div class="list" ng-show="proeceso">
+        Pendientes por Sincronizar ...
+        <div class="list">
+          <a class="item item-icon-right item-text-wrap pointer"  ng-click="detallePedidoPen(1)">
+            <h2>
+            <span class="ion-location"></span><strong> {{folio}}</strong>
+          </h2>
+            <span class="ion-calendar"></span>
+            <label>Despacho en curso</label>
+            <i class="icon ion-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="list" ng-show="finalizados">
+        <div class="list">
+          <label class="item item-input item-select">
+            <div>
+              Ver:
+            </div>
+            <select ng-model="mySelect" ng-change="showSelectValue(mySelect)" ng-options="tipo as tipo.tipo for tipo in tipoBusqueda track by tipo.id ">
+            </select>
+          </label>
+        </div>
+        <div ng-show="noResult">Por el momento no hay Resultados ...
+          <label class="ion-sad-outline"></label>
+        </div>
+        <a class="item item-icon-right item-text-wrap pointer" ng-repeat="despacho in despachos" ng-click="detallePedido(despacho)">
+          <h2>
+            <span class="ion-location"></span><strong> {{despacho.folio}}</strong>
+          </h2>
+          <span class="ion-calendar"></span>
+          <label>10/Abril/2018</label>
+          <i class="icon ion-chevron-right"></i>
+        </a>
+      </div>
+  </ion-content>
+</ion-view>

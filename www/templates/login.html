@@ -1,0 +1,27 @@
+<link href="css/login.css" rel="stylesheet">
+<ion-view title="Iniciar sesión" hide-nav-bar="true" id="page4" class=""> 
+<div><img class="homeBg" src="img/almacen.jpeg"/></div>   
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <div class="spacer"></div>
+        <h3 id="iniciarSesiN-heading4" class="text-center titulo">Iniciar Sesión</h3> 
+        <div class="spacer"></div>
+        <div>
+            <img src="img/logoA.png" class="imgLogo">
+        </div>
+        <form id="iniciarSesiN-form1" class="list">
+            <div class="spacer-2"></div>
+            <ion-list id="iniciarSesiN-list1">
+                <label class="item item-input item-stacked-label" id="iniciarSesiN-input1">
+                    <span class="input-label">Usuario</span>
+                    <input type="text" ng-model="usuario.user">
+                </label>
+                <label class="item item-input item-stacked-label" id="iniciarSesiN-input2">
+                    <span class="input-label">Contraseña</span>
+                    <input type="password" ng-model="usuario.password">
+                </label>
+            </ion-list>
+            <div class="spacer" style="width: 300px; height: 10px;"></div>
+            <a id="iniciarsesion-button1" class="button button-positive  button-block contorno" ng-click="verificaCampos()">Iniciar Sesión</a>
+        </form>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,96 @@
+<link href="css/confirmacion.css" rel="stylesheet">
+<ion-view title="Búsqueda" hide-nav-bar="true" id="page1" ng-init="init()">
+  <ion-content padding="false" class="manual-ios-statusbar-padding">
+    <a class="item item-icon-left" ui-sref="despacho">
+      <i class="icon ion-chevron-left pointer"></i>
+      <p class="text-center titulo"><strong>{{pedido.folio}}</strong></p>      
+    </a>
+    <!-- <div class="spacer"></div> -->
+    <div class="padding">
+      <span><strong>Cliente:</strong></span>
+      <span>{{pedido.PER_NOMRAZON}}</span>
+      <br/>
+      <span><strong>Dirección:</strong></span>
+      <span>{{pedido.dir}}</span>
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        <a class="button button-balanced button-small redondea" href="tel:{{pedido.telCliente}}">
+                <i class="icon ion-android-call">  {{pedido.telCliente}} </i>
+              </a>
+      </div>
+      <div class="col text-center">
+        <a class="button button-positive button-small redondea" href="geo:{{pedido.latitud}},{{pedido.longitud}}?q={{pedido.latitud}},{{pedido.longitud }}({{pedido.PER_NOMRAZON}})">
+                <i class="icon ion-map">  Ir </i>
+              </a>
+      </div>
+    </div>
+    <div class="list">
+      <div class="item item-divider">
+        <strong>Detalle Pedido: {{pedido.numpedido}}</strong>
+      </div>
+      <a class="item item-text-wrap padding-sin" ng-repeat="pieza in piezas">
+        <p><strong># de Parte: </strong>{{pieza.PTS_IDPARTE}}</p>
+        <p><strong>Descripción: </strong>{{pieza.PTS_DESPARTE}}</p>
+        <!--  <div class="row">
+          <div class="col text-center">
+            Piezas
+          </div>
+        </div> -->
+        <div class="row">
+          <div class="col text-solicitada text-center nopadding">
+            Solicitadas
+            <br/>
+            <div class="solicitada">
+              {{pieza.CANTIDAD_OLD}}
+            </div>
+          </div>
+          <div class="col text-entregada text-center nopadding">
+            Entregar
+            <br/>
+            <div class="entregada">
+              {{pieza.Cantidad}}
+            </div>
+          </div>
+          <div class="col text-rechazada nopadding">
+            Rechazar
+            <br/>
+            <div class="rechazada">
+              <input type="number" ng-model ="pieza.numerorechaza" ng-change="verificaCantidad(pieza.numerorechaza,$index)" class="inputRechaza"> 
+              <!-- {{pieza.numerorechaza}} -->
+              <!-- <button class="button button-assertive button-small" ng-click="sumaRechaza(pieza)"><i class="icon ion-plus-round"></i></button>
+              <button class="button button-positive button-small" ng-click="restaRechaza(pieza)"><i class="icon ion-minus-round"></i></button> -->
+              <button class="button button-assertive button-small nopadding" ng-click="sumaRechaza($index)"><i class="icon ion-plus-round"></i></button>
+              <button class="button button-positive button-small nopadding" ng-click="restaRechaza($index)"><i class="icon ion-minus-round"></i></button>
+            </div>
+          </div>
+        </div>
+        <div ng-show="pieza.numerorechaza > 0" class="text-rechazada">
+          <button class="button button-outline button-assertive button-small button-block" ng-click="abrirModal($index)">Motivo de rechazo: {{pieza.motivo}}</button>
+        </div>
+      </a>
+    </div>
+    <div class="padding">
+      <a class="button button-positive button-full button-small contorno" ng-click="irEntrega()">Siguiente</a>
+    </div>
+  </ion-content>
+</ion-view>
+<!--Modal para seleccionar motivo -->
+<script id="motivo.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar-assertive">
+      <h1 class="title">Motivos de Rechazo</h1>
+      <button class="button button-light button-assertive" ng-click="cerrarModal()"><i class="icon ion-android-close"></i></button>
+    </ion-header-bar>
+    <ion-content class="text-center">
+      <div class="list padding-vertical">
+        <a class="item item-icon-right item-text-wrap pointer border-red" ng-repeat="motivo in motivosDevolucion" ng-click="seleccionMotivo(motivo)">
+          <h2>{{motivo.display}}</h2>
+        </a>
+      </div>
+      <!-- <ion-list>
+        <ion-item ng-repeat="motivo in motivosDevolucion">{{motivo.display}}</ion-item>
+      </ion-list> -->
+    </ion-content>
+  </ion-modal-view>
+</script>

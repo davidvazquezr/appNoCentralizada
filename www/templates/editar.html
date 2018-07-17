@@ -1,0 +1,30 @@
+
+<ion-view title="Editar" hide-nav-bar="true" id="page1" ng-init="init()">
+  <ion-content padding="false" class="manual-ios-statusbar-padding">
+    <a class="item item-icon-left fondo" ui-sref="consultas">
+      <i class="icon ion-chevron-left pointer"></i>
+      <h2 class="text-center titulo"><strong>{{nombreUsuario}}</strong></h3>      
+    </a>
+  
+    
+    <div class="padding">
+        
+            <div class="spacer-2"></div>
+            <ion-list >
+                <label class="item item-input item-stacked-label" >
+                    <span class="input-label">Telefono</span>
+                    <input type="text" ng-model="telefono">
+                </label>
+                <label class="item item-input item-stacked-label" >
+                    <span class="input-label">Contraseña</span>
+                    <input type="text" ng-model="contasenia">
+                </label>
+            </ion-list>
+            <div class="spacer" style="width: 300px; height: 10px;"></div>
+           <button class="button button-positive button-full button-small contorno" ng-click="actualiza(telefono,contasenia)"> Ok</button>
+        
+    
+    </div>
+ 
+  </ion-content>
+</ion-view>

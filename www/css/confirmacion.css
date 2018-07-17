@@ -1,0 +1,84 @@
+.redondea {
+  border-radius: 30px 30px 30px 30px !important;
+  width: 120px;
+}
+
+.text-solicitada {
+  color: blue;
+  font-size: 14px;
+}
+
+.text-entregada {
+  color: green;
+  font-size: 14px;
+}
+
+.text-rechazada {
+  color: red;
+  font-size: 14px;
+}
+
+.solicitada {
+  color: blue;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.entregada {
+  color: green;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.rechazada {
+  color: red;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+
+
+
+
+
+
+/*.rechazada {
+    border-color: transparent;
+    color: #444;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0 12px;
+    min-width: 52px;
+    min-height: 47px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    vertical-align: top;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    line-height: 42px;
+}*/
+
+.inputRechaza {
+  width: 32px;
+  display: inline-block !important;
+  padding-top: 0px !important;
+  height: 20px !important;
+  color: red !important;
+  text-align: center;
+  border-bottom: 1px solid #F00 !important;
+}
+
+.nopadding {
+  padding: 0px;
+}
+
+.padding-sin {
+  padding: 10px !important;
+}
+
+.border-red {
+  border-color: #ef473a !important;
+}

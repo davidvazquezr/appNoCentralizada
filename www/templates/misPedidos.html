@@ -1,0 +1,37 @@
+<ion-view title="Mis Pedidos" hide-nav-bar="true" id="page1" ng-init="init()">
+  <ion-content padding="false" class="manual-ios-statusbar-padding">
+    <a class="item item-icon-left fondo" ui-sref="misDespachos">
+      <i class="icon ion-chevron-left pointer"></i>
+    <h2 class="text-center titulo"><strong>{{miDespacho.folio}}</strong></h2>      
+    </a>
+    <div class="padding">
+      <!-- <h4 class="text-center">{{pedidos[0].folio}}</h4> -->
+      <span><strong>Ruta:</strong></span>
+      <span>{{pedidos[0].nombreRuta}}</span>
+      <br/>
+      <span><strong>Descripción:</strong></span>
+      <span>{{pedidos[0].desRuta}}</span>
+      <br/>
+      <span><strong>Unidad:</strong></span>
+      <span>{{pedidos[0].modelo + ' ' + pedidos[0].descripcion + ' ' + pedidos[0].anio}}</span>
+      <br/>
+      <span><strong>Ecónomico:</strong></span>
+      <span>{{pedidos[0].economico}}</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+
+    <div class="padding">
+     <strong> &nbsp;Listado del pedidos :</strong>
+      <div class="spacer"></div>
+      <div class="list">
+        <a class="item item-icon-right item-text-wrap pointer" ng-repeat="pedido in pedidos">
+          <h2>
+          # {{pedido.numpedido}}&nbsp; <strong>C.P: </strong>{{pedido.cp}}
+        </h2>
+          <p><strong>Dirección: </strong>{{pedido.dir}}</p>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

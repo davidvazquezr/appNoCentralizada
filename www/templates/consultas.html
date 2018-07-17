@@ -1,0 +1,32 @@
+<link href="css/style.css" rel="stylesheet">
+<ion-view title="Búsqueda" hide-nav-bar="true" id="page1" ng-init="init()"  >
+    <div><img class="homeBg" src="img/cdmx.png"/></div>   
+    <ion-content padding="true" class="manual-ios-statusbar-padding ">
+    <div class="spacer"></div>
+    <div class="text-center">
+      <i class="icon ion-person ion-t-1"></i>
+    </div>
+    <h3 id="bSqueda-heading2" class="text-center titulo">{{nombreUsuario}}</h3>
+    <div class="spacer"></div>
+    <div class=" padding-horizontal">
+      <button class="button button-full button-balanced button button-large button-block contorno " ng-click="detalle()">
+        <i class="icon ion-android-bus">  Mi Despacho </i>
+      </button>
+    </div>
+    <div class="padding-horizontal">
+      <button class="button button-full button-positive button button-large button-block contorno " ng-click="misDespachos()">
+        <i class="icon ion-clipboard">  Historial </i>
+      </button>
+    </div>
+       <div class="padding-horizontal">
+      <button class="button button-full button-dark button button-large button-block contorno " ng-click="editar()">
+        <i class="icon ion-settings">  Editar Perfil </i>
+      </button>
+    </div>
+    <div class="padding-horizontal">
+      <button class="button button-full button-assertive button button-large button-block contorno " ng-click="salir()">
+        <i class="icon ion-ios-close-empty">  Salir </i>
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

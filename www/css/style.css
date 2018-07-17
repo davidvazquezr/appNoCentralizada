@@ -1,0 +1,56 @@
+/* Empty. Add your own CSS if you like */
+.homeBg{
+opacity: 0.3;
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+}
+.alturaBtn{height: 100px}
+
+.contorno {
+  font-weight: 300;
+  color: #FFF;
+  border-radius: 8px 8px 8px 8px !important;
+}
+
+.spacer {
+  width: 300px;
+  height: 10px;
+}
+
+.titulo {
+  color: #392972 !important;
+  letter-spacing: 3px !important;
+  font-size: 20px !important;
+}
+
+.spacer-2 {
+
+  height: 40px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.ion-t-1 {
+  font-size: 90px;
+}
+
+.ion-t-2 {
+  font-size: 20px;
+}
+
+.fondo {
+  /*background-color: blue;*/
+}
+#iniciarSesiN-list1 label{
+border: none;
+padding-right: 15px;
+}
+
+
+
+

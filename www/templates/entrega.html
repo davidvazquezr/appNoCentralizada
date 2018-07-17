@@ -1,0 +1,121 @@
+<link href="css/entrega.css" rel="stylesheet">
+<ion-view title="Búsqueda" hide-nav-bar="true" id="page1" ng-init="init()">
+  <ion-content padding="false" class="manual-ios-statusbar-padding">
+    <a class="item item-icon-left" ui-sref="confirmacion">
+      <i class="icon ion-chevron-left pointer"></i>
+      <h2 class="text-center titulo"><strong>{{pedido.folio}}</strong></h2>      
+    </a>
+    <div class="spacer"></div>
+    <div class="padding-horizontal">
+      <span><strong>Cliente:</strong></span>
+      <span>{{pedido.PER_NOMRAZON}}</span>
+    </div>
+    <div class="list">
+      <div class="item item-divider">
+        <strong>Detalle Pedido: {{pedido.numpedido}}</strong>
+      </div>
+      <a class="item item-text-wrap" ng-repeat="pieza in piezas">
+        <p><strong># de Parte: </strong>{{pieza.PTS_IDPARTE}}</p>
+        <p><strong>Descripción: </strong>{{pieza.PTS_DESPARTE}}</p>
+        <!--  <div class="row">
+          <div class="col text-center">
+            Piezas
+          </div>
+        </div> -->
+        <div class="row">
+          <div class="col text-solicitada text-center">
+            Solicitadas
+            <br/>
+            <div class="solicitada">
+              {{pieza.CANTIDAD_OLD}}
+            </div>
+          </div>
+          <div class="col text-entregada text-center">
+            Entregar
+            <br/>
+            <div class="entregada">
+              {{pieza.Cantidad}}
+            </div>
+          </div>
+          <div class="col text-rechazada text-center">
+            Rechazar
+            <br/>
+            <div class="rechazada">
+              {{pieza.numerorechaza}}
+            </div>
+          </div>
+        </div>
+        <div class="text-rechazada text-center" ng-show="pieza.numerorechaza > 0">
+          Motivo de rechazo: {{pieza.motivo}}
+        </div>
+      </a>
+    </div>
+    <div class="padding">
+      <a class="button button-dark button-small button-full contorno" ng-click="tomaImagen()">
+        <i class="icon ion-ios-camera-outline"></i> Firmar 
+       </a>
+      <div class="text-center">
+        <img ng-show="mostrarImagen==1" ng-src="{{srcImage}}">
+        <p ng-show="mostrarImagen==0"> </p>
+        <br/>
+      </div>
+    </div>
+    <div class="">
+      <label class="item item-input" ng-show="srcImage">
+        <!-- ng-show="srcImage" -->
+        <input type="text" placeholder="Inserte el token del pedido" ng-model="token">
+      </label>
+      <div class="item" ng-show="srcImage">
+        <button class="button button-positive button-full button-small contorno" ng-click="verificaToken(token)"> Entregar</button>
+      </div>
+    </div>
+    <!-- <div class="item item-button-right">
+      Firma
+      <button class="button button-positive" ng-click="tomaImagen()">
+        <i class="icon ion-ios-camera-outline"></i>
+      </button>
+    </div> -->
+    <!-- <div class="">
+      <div class="row">
+        <div class="col">
+          <a class="button button-royal button-full button-small" ng-click="irConfirmacion(piezas)">
+            Entregar
+          </a>
+        </div>
+        <div class="col">
+          <a class="button button-dark button-full button-small" ng-click="modal.show()">
+                  Firmar 
+              </a>
+        </div>
+      </div>
+    </div> -->
+  </ion-content>
+</ion-view>
+<!--Modal para la carga de archivos -->
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Comprobante</h1>
+      <button class="button button-light " ng-click="modal.hide()"><i class="icon ion-android-close"></i></button>
+    </ion-header-bar>
+    <ion-content class="text-center">
+      <ion-item>
+        <img ng-show="mostrarImagen==1" ng-src="{{srcImage}}">
+        <p ng-show="mostrarImagen==0"> </p>
+        <br/>
+        <div class="row">
+          <div class="col">
+            <button class="button button-positive button-full button-small" ng-click="tomaImagen()">
+              <i class="icon ion-android-camera"> Tomar Foto</i>
+            </button>
+          </div>
+          <div class="col">
+            <button class="button button-balanced button-full button-small" ng-click="guardarURL(srcImage,nombreArchivo.nombre,mostrarBoton)">
+              <i class="icon ion-android-send"> Enviar</i>
+            </button>
+          </div>
+        </div>
+      </ion-item>
+    </ion-content>
+  </ion-modal-view>
+</script>

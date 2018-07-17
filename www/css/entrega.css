@@ -1,0 +1,32 @@
+.text-solicitada {
+  color: blue;
+  font-size: 14px;
+}
+
+.text-entregada {
+  color: green;
+  font-size: 14px;
+}
+
+.text-rechazada {
+  color: red;
+  font-size: 14px;
+}
+
+.solicitada {
+  color: blue;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.entregada {
+  color: green;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.rechazada {
+  color: red;
+  font-size: 16px;
+  line-height: 26px;
+}

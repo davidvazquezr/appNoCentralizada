@@ -1,0 +1,35 @@
+<link href="css/despacho.css" rel="stylesheet">
+<ion-view title="Búsqueda" hide-nav-bar="true" id="page1" ng-init="init()">
+  <ion-content padding="false" class="manual-ios-statusbar-padding">
+    <a class="item item-icon-left fondo" ui-sref="consultas">
+      <i class="icon ion-chevron-left pointer"></i>
+      <h2 class="text-center titulo"><strong>{{pedidos[0].folio}}</strong></h3>      
+    </a>
+  
+    
+    <div class="padding">
+    
+      <span><strong>Ruta:</strong></span>
+      <span>{{pedidos[0].nombreRuta}}</span>
+      <br/>
+      <span><strong>Descripción:</strong></span>
+      <span>{{pedidos[0].desRuta}}</span>
+      <br/>
+      <span><strong>Unidad:</strong></span>
+      <span>{{pedidos[0].modelo + ' ' + pedidos[0].descripcion + ' ' + pedidos[0].anio}}</span>
+      <br/>
+      <span><strong>Ecónomico:</strong></span>
+      <span>{{pedidos[0].economico}}</span>
+    </div>
+    <div class="list">
+      <a class="item item-icon-right item-text-wrap pointer" ng-repeat="pedido in pedidos" ng-click="detallePedido(pedido)" ng-if="pedido.sit == 2 ">
+        <h2>
+          <strong># de Pedido: </strong> {{pedido.numpedido}}
+          <strong>C.P.: </strong>{{pedido.cp}}
+        </h2>
+        <p><strong>Dirección: </strong>{{pedido.dir}}</p>
+        <i class="icon ion-chevron-right"></i>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

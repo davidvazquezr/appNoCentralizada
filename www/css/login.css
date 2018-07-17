@@ -1,0 +1,30 @@
+.imgLogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: auto;
+}
+
+.homeBg{
+opacity: 0.3;
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+}
+
+.bgApp{
+background: #eef2f3;  
+background: -webkit-linear-gradient(to top,  #bac8d3,#eef2f3);
+background: linear-gradient(to top,  #bac8d3,#eef2f3); 
+}
+/*.popup-head {
+  padding: 10px 10px;
+  background-color: #ef483b;
+}
+
+.popup-title {
+  color: #fff;
+}*/
